@@ -1,0 +1,44 @@
+---
+layout: base
+progress-bar: true
+use-site-title: true
+---
+
+  {% include header.html type="post" %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <div class="wrapper">
+          <article role="main" class="blog-post">
+            {{ content }}
+          </article>
+          <div>
+            {% assign categories = page.categories %}
+            {% for category in categories %}
+              <a href="{{ site.baseurl }}/category/#{{ category | downcase | slug_size }}" class="btn btn-warning">{{ category }}</a>
+              {% unless forloop.last %}&nbsp;{% endunless %}
+            {% endfor %}
+          </div>
+        </div>
+        
+        <hr>
+
+        <ul class="pagination justify-content-center" id="pagination">
+          {% if page.previous.url %}
+            <li class="page-item"><a class="page-link" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"><i class='fas fa-chevron-left' style='color: #FF8600;'></i> Previous</a></li>
+          {% else %}
+            <li class="page-item disabled"><span class="page-link" style="color: #999999;"><i class='fas fa-chevron-left'></i> Previous</span></li>
+          {% endif %}
+
+          {% if page.next.url %}
+            <li class="page-item"><a class="page-link" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}">Next <i class='fas fa-chevron-right' style='color: #FF8600;'></i></a></li>
+          {% else %}
+            <li class="page-item disabled"><span class="page-link" style="color: #999999;">Next <i class='fas fa-chevron-right'></i></span></li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <nav id="toc" data-toggle="toc" class="sticky-top" style="padding: 30px;"><p>Contents</p></nav>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,34 @@
+# Site settings
+title: "Trung Nghia Nguyen"
+email:
+author:
+  name: Trung Nghia Nguyen
+description: This is a place where I could express all my thoughts
+url: "https://ntnghia.netlify.app"
+
+# Build settings
+permalink: :title/
+sass:
+  sass_dir: css
+
+plugins:
+  - jekyll-paginate
+baseurl: ""
+
+# --- Background colour/image options --- #
+
+# Personalize the colors in your website. Colour values can be any valid CSS colour
+
+background-color: 'white'
+background-scrolled-navbar: 'rgba(249, 240, 234, 0.8)'
+
+# Output options (more information on Jekyll's site)
+timezone: "Asia/Ho_Chi_Minh"
+markdown: kramdown
+incremental: true
+include: ["_pages"]
+exclude: [Gemfile, Gemfile.lock, README.md]
+
+# jekyll-paginate configuration
+paginate: 6
+paginate_path: /:num/

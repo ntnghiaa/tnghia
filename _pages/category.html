@@ -1,0 +1,20 @@
+---
+layout: page
+permalink: /category/
+title: Category
+smooth-scrolling: true
+---
+
+<div class="container">
+    {% for category in site.categories %}
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <div id="#{{ category_name | slugize }}"></div>
+        <h2 class="spanborder"><span>{{ category_name }}</span></h2>
+        <!--<a name="{{ category_name | slugize }}"></a>-->
+        {% for post in site.categories[category_name] %}
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                {{ post.title }}
+            </a>
+        {% endfor %}
+    {% endfor %}
+</div>

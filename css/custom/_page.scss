@@ -1,0 +1,94 @@
+.wrapper {
+    display: grid;
+    padding: 30px;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 992px) {
+    .wrapper {
+        padding: 30px 0;
+    }
+}  
+
+#pagination {
+    margin: 0;
+    padding: 10px 0 40px 0;
+    .page-item {
+        padding: 0 16px;
+        .page-link {
+            background-color: white;
+            display: inline-block;
+            margin: 0;
+            padding: 5px 0 5px 0;
+            font-family: Pangram-Bold;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $black;
+            border: none;
+            /*border-radius: 50%;*/
+            &:hover, &:focus {
+                background: none;
+                box-shadow: none;
+                border-bottom: 1.5px solid $black;
+                margin-bottom: -5px;
+            }
+        }
+        &.active .page-link {
+            background: none; /*#FF8600;*/
+            color: #FF8600;
+            font-weight: 900;
+            border-bottom: 1.5px solid #FF8600;
+                margin-bottom: -5px;
+            /*box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+            -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+            -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);*/
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+        }
+
+        &:first-child {
+            flex: 1 1 auto;
+            .page-link {
+              border-radius: 0;
+              letter-spacing: .2em;
+              font-weight: 900;
+                &:hover, &:focus {
+                    border-bottom: none;
+                }
+            }
+        }
+        &:last-child {
+            flex: 1 1 auto;
+            text-align: end;
+            .page-link {
+              border-radius: 0;
+              letter-spacing: .2em;
+              font-weight: 900;
+              &:hover, &:focus {
+                border-bottom: none;
+              }
+            }
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .page-item {
+            &:not(:first-child):not(:last-child) {
+                display: none;
+            }
+        }
+    }
+}
+
+.spanborder {
+    border-bottom: 2px solid #e8f3ec;
+    margin: 0;
+}
+.spanborder span {
+    border-bottom: 2px solid #FF8600;
+    display: inline-block;
+    padding-bottom: 20px;
+    margin-bottom: -2px;
+    color: #FF8600;
+}

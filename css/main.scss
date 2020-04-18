@@ -1,0 +1,260 @@
+---
+---
+
+/* Fonts */
+@font-face {
+  font-family: "Brandon";
+  src: url("../assets/fonts/Brandon.otf");
+}
+@font-face {
+  font-family: "Brandon-Bold";
+  src: url("../assets/fonts/Brandon-Bold.otf");
+}
+
+@font-face {
+  font-family: "Pangram-Bold";
+  src: url("../assets/fonts/Pangram-Bold.otf");
+}
+
+@import "https://fonts.googleapis.com/css?family=Merriweather&display=swap";
+
+@import "https://fonts.googleapis.com/css?family=Open+Sans&display=swap";
+
+
+/* --- Bootstrap v4.3.1 */
+@import 'bootstrap/bootstrap';
+@import "custom/variables";
+@import "custom/toc";
+@import "custom/progress";
+@import "custom/navbar";
+@import "custom/page";
+@import "custom/post";
+@import "custom/footer";
+
+/* --- General --- */
+
+body {
+  margin-bottom: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 17px;
+  color: $black;
+  background-color: {{ site.background-color }};
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  line-height: 1.5;
+  margin: 15px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+}
+
+
+
+/* h2 customization*/
+a {
+  color: $red;
+}
+
+a:hover/*, a:focus*/ {
+  text-decoration: none;
+  color: $primary;
+}
+
+blockquote {
+  color: #808080;
+  font-style: italic;
+}
+
+blockquote p:first-child {
+  margin-top: 0;
+}
+
+.main-content {
+  padding-top: 0;
+}
+@media only screen and (min-width: 768px) {
+  .main-content {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+.hideall {
+  display: none;
+}
+
+::-moz-selection {
+  background-color: rgba(255, 134, 0, 0.4);
+}
+
+::selection {
+  background-color: rgba(255, 134, 0, 0.4);
+}
+
+.linked-section {
+  padding-top: 60px;
+  margin-top: -25px;
+}
+
+
+/* --- Post and page headers --- */
+.post-heading .post-meta {
+  display: block;
+  color: #FF8600;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.intro-header {
+  position: relative;
+  margin: 0;
+  padding-top: 70px;
+  text-align: center;
+}
+.intro-header .page-heading h1 {
+  font-family: Brandon;
+  margin-top: 0;
+  font-size: 35px;
+}
+.intro-header .post-heading h1 {
+  font-family: Brandon;
+  margin-top: 0;
+  font-size: 35px;
+}
+.intro-header .page-heading .page-subheading,
+.intro-header .post-heading .post-subheading {
+  font-size: 27px;
+  line-height: 1.1;
+  display: block;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+.intro-header .post-heading .post-subheading {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.intro-header .page-heading .page-subheading,
+.intro-header .post-heading .post-subheading {
+  font-weight: 400;
+}
+.intro-header.page-heading hr {
+  box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  -moz-box-shadow: 1px 1px 3px #000;
+}
+.intro-header.post-heading .post-meta {
+  color: #FF8600;
+}
+@media only screen and (min-width: 992px) {
+  .intro-header {
+    padding-top: 132px;
+  }
+}
+
+.header-section.no-img {
+  margin-top: 0px;
+  background-color: #FCFCFC;
+  margin: 0 0 40px;
+  padding: 0 0;
+  box-shadow: 0 0 5px #AAA;
+}
+/* Many phones are 320 or 360px, so make sure images are a proper aspect ratio in those cases */
+.header-section.intro-header.no-img {
+  display: none;
+}
+@media only screen and (max-width: 365px) {
+  .header-section.intro-header.no-img {
+    display: block;
+  }
+  .intro-header {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+/* --- Code blocks --- */
+
+pre {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+pre code {
+  white-space: pre;
+}
+pre.highlight, .highlight > pre, td.code pre {
+  background-color: #FAFAFA;
+  background-image: linear-gradient(#F9F9F9 50%, #FDFDFD 50%);
+  background-repeat: repeat;
+  background-size: 3em 3em;
+  background-position: 0px 10px;
+  border-left: 7px solid #444;
+}
+code table, code table td, code table th, code table tbody, code table tr,
+td.gutter pre {
+  padding: 0;
+  border: none;
+  background-color: #fff;
+}
+.highlight > pre {
+  padding: 0;
+}
+.highlight > pre.highlight {
+  padding: 9.5px;
+}
+td.code pre {
+  border-width: 0 0 0 2px;
+  border-style: solid;
+  border-color: #444;
+  border-radius: 0;
+}
+td.gutter {
+  padding-top: 3px;
+}
+
+/* --- Notification boxes --- */
+.box-note, .box-warning, .box-error {
+  padding: 15px 15px 15px 10px;
+  margin: 20px 20px 20px 5px;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 5px 3px 3px 5px;
+}
+
+.box-note {
+  background-color: #eee;
+  border-left-color: #2980b9;
+}
+
+.box-warning {
+  background-color: #fdf5d4;
+  border-left-color: #f1c40f;
+}
+
+.box-error {
+  background-color: #f4dddb;
+  border-left-color: #c0392b;
+}
+
+.container {
+  padding: 30px 15px;
+  margin: auto;
+  /*width: 100%;*/
+}
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 65%;
+  }
+}

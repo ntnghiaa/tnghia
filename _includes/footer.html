@@ -1,0 +1,75 @@
+<!-- Here is uncompressed JQuery, Popper and Bootstrap.js -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<footer class="page-footer">
+    <div class="footer-copyright text-center py-4">
+        <a href="{{ site.url }}">&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</a>
+    </div>
+</footer>
+
+<!-- Common js things -->
+{% if layout.common-ext-js %}
+    {% for js in layout.common-ext-js %}
+        {% if include.js.sri %}
+            <script src="{{ include.js.href }}" integrity="{{ include.js.sri }}" crossorigin="anonymous"></script>
+        {% elsif include.js.href %}
+            <script src="{{ include.js.href }}"></script>
+        {% else %}
+            <script src="{{ include.js }}"></script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if page.ext-js %}
+    {% for js in page.ext-js %}
+        {% if include.js.sri %}
+            <script src="{{ include.js.href }}" integrity="{{ include.js.sri }}" crossorigin="anonymous"></script>
+        {% elsif include.js.href %}
+            <script src="{{ include.js.href }}"></script>
+        {% else %}
+            <script src="{{ include.js }}"></script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if page.js %}
+    {% for js in page.js %}
+	    <script src="{{ js | prepend: site.baseurl | replace: '//', '/' }}"></script>
+    {% endfor %}
+{% endif %}
+
+{% if layout.common-js %}
+    {% for js in layout.common-js %}
+        <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+        {% if js contains 'jquery' %}
+            <script>
+      	        if (typeof jQuery == 'undefined') {
+      	            document.write('<script src="{{ js | prepend: site.baseurl | replace: "//", "/" }}"></scr' + 'ipt>');
+      	        }
+            </script>
+        {% else %}
+	        <script src="{{ js | prepend: site.baseurl | replace: '//', '/' }}"></script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if page.layout =='post' or page.smooth-scrolling %}
+    <script>
+        $(function() {
+       $('a[href*="#"]:not([href="#"])').click(function() {
+         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+           var target = $(this.hash);
+           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html, body').animate({
+               scrollTop: target.offset().top
+             }, 1000);
+             return false;
+           }
+         }
+       });
+     });
+    </script>
+{% endif %}
