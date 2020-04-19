@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Phi hàm Euler</title>
+  
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+    <!-- Common css things -->
+    
+        
+            
+                <link rel="stylesheet" href="" />
+            
+        
+    
+
+    
+        
+            <link rel="stylesheet" href="/css/main.css" />
+        
+    
+
+    
+        
+            <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+        
+    
+
+    
+
+    
+
+    
+
+    <!-- Prefetch Katex fonts -->
+    <script>
+        window.WebFontConfig = {
+          custom: {
+            families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+              'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+              'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+              'KaTeX_Size4', 'KaTeX_Typewriter'],
+          },
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>
+    <!-- Prefetch Katex fonts -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.css" integrity="sha384-+MsSfd29vjUzcyqYURxcmpWGtqoSHBy+QdEJNLEslXQftxojQv0k6BGDqUNp9GtA" crossorigin="anonymous">
+    <script rel="preload" src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.js" integrity="sha384-5zUJgoXUAOXAoLeyJm2Ja3vbN3VCnoc2w0rG7dyC2jjGwD8PINuWoDHJ3gNdkOxj" crossorigin="anonymous"></script>
+</head>
+      
+  <body data-spy="scroll" data-target="#toc">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="main-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">T·Nghia</a>
+    <button class="navbar-toggler hamburger-button" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/misc/">Miscellany</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <progress value="0" id="progressBar">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+
+
+    <header class="header-section">
+	<div class="intro-header no-img">
+  		<div class="container" style="padding: 0;">
+    		<div class="post-heading">
+			  	<h1>Phi hàm Euler</h1>
+				
+
+		  		
+
+		  		
+		  			<span class="post-meta">April 17, 2020</span>
+		  		
+    		</div>
+  		</div>
+	</div>
+</header>
+<div class="container">
+  
+    <div class="row">
+      <div class="col-lg-9 col-md-12">
+          <article role="main" class="blog-post">
+            <ul>
+  <li>Hàm phi (<script type="math/tex">\varphi</script>) Euler của một số nguyên dương <script type="math/tex">n</script> được định nghĩa là số các số nguyên dương <script type="math/tex">m</script> không vượt quá <script type="math/tex">n</script> sao cho <script type="math/tex">(m,n)=1</script>.
+    <ul>
+      <li>Ví dụ, số 10 có 4 số nguyên dương không vượt quá 10 và nguyên tố cùng nhau với 10, đó là 1, 3, 7, 9. Như vậy, <script type="math/tex">\varphi(10)=4</script>.</li>
+    </ul>
+  </li>
+  <li>Nếu <script type="math/tex">n=p</script> là số nguyên tố, dễ thấy <script type="math/tex">\varphi(p)=p-1</script>.</li>
+  <li>Nếu <script type="math/tex">n=p^k</script> thì <script type="math/tex">\varphi(p^k)=p^k-p^{k-1}</script>.
+    <ul>
+      <li><strong>Chứng minh:</strong> Có tổng cộng <script type="math/tex">p^k</script> số nguyên dương cần xét. Trong số đó, các số <script type="math/tex">m</script> có ước chung lớn nhất với <script type="math/tex">n</script> khác 1 sẽ có dạng <script type="math/tex">m=px</script>, với <script type="math/tex">x</script> là bất cứ số nguyên dương nào đảm bảo <script type="math/tex">px\leq p^k</script>, như vậy có tổng cộng <script type="math/tex">p^{k-1}</script> giá trị <script type="math/tex">x</script> như thế. Suy ra số các số nguyên tố cùng nhau với <script type="math/tex">n</script> là <script type="math/tex">p^k-p^{k-1}</script>. (QED)</li>
+    </ul>
+  </li>
+  <li>Nếu <script type="math/tex">n=p_1p_2</script> (với <script type="math/tex">p_1 \neq p_2</script>) thì <script type="math/tex">\varphi(p_1p_2) = \varphi(p_1)\times\varphi(p_2)</script>.
+    <ul>
+      <li><strong>Chứng minh:</strong> Có tổng cộng <script type="math/tex">p_1p_2</script> số nguyên dương cần xét. Trong số đó, các số <script type="math/tex">m</script> có ước chung lớn nhất với <script type="math/tex">n</script> khác 1 sẽ có dạng <script type="math/tex">m=p_1x</script> hoặc <script type="math/tex">m=p_2x</script> sao cho <script type="math/tex">m\leq n</script>. Trong trường hợp đầu, <script type="math/tex">x</script> trải dài từ <script type="math/tex">1</script> đến <script type="math/tex">p_2</script>. Trong trường hợp sau, <script type="math/tex">x</script> trải dài từ <script type="math/tex">1</script> đến <script type="math/tex">p_1</script>. Tuy nhiên, có hai giá trị <script type="math/tex">m</script> được đếm hai lần, đó là <script type="math/tex">p_1p_2</script>. Như vậy có tổng cộng <script type="math/tex">p_1+p_2-1</script> số không nguyên tố cùng nhau với <script type="math/tex">n</script>. Như vậy:</li>
+    </ul>
+  </li>
+</ul>
+
+<script type="math/tex; mode=display">\varphi(n)=p_1p_2-(p_1+p_2-1)\\
+    =p_1p_2 - p_1 - p_2 + 1\\
+    =p_1(p_2-1)-(p_2-1)\\
+    =(p_1-1)(p_2-1)\\
+    =\varphi(p_1)\times\varphi(p_2)</script>
+
+<ul>
+  <li>Nếu <script type="math/tex">n=ab</script> (với <script type="math/tex">a,b</script> nguyên tố cùng nhau) thì <script type="math/tex">\varphi(ab)=\varphi(a)\times\varphi(b)</script> (trường hợp tổng quát hơn của định lý trước).
+    <ul>
+      <li><strong>Chứng minh</strong>: Tất cả các số nguyên dương <script type="math/tex">m</script> không vượt quá <script type="math/tex">n=ab</script> có dạng <script type="math/tex">m=aq+r</script> với <script type="math/tex">q,r</script> là các số nguyên lần lượt nằm trong khoảng <script type="math/tex">[0,b-1]</script> và <script type="math/tex">[1,a]</script>.
+  Công việc cần làm là đếm xem có bao nhiêu cặp giá trị <script type="math/tex">(q,r)</script> thỏa bài toán.
+  <br /><br /><em><strong>Bước 1:</strong></em> Chọn <script type="math/tex">r</script>. Nhận thấy rằng <script type="math/tex">d=(r,a)\neq 1</script>, nếu không, <script type="math/tex">m\vdots d</script> và <script type="math/tex">n\vdots d</script> suy ra <script type="math/tex">(m,n)\neq 1</script>. Xét việc chọn các giá trị <script type="math/tex">r</script> thỏa mãn <script type="math/tex">(r,a)=1</script>, có tổng cộng <script type="math/tex">\varphi(a)</script> giá trị <script type="math/tex">r</script> như thế.
+  <br /><br /><em><strong>Bước 2:</strong></em> Chọn <script type="math/tex">q</script>. Với mỗi giá trị <script type="math/tex">r</script> đã chọn, có tổng cộng <script type="math/tex">b</script> số <script type="math/tex">m=aq+r</script> cần phải xét, với <script type="math/tex">q</script> chạy từ <script type="math/tex">0</script> đến <script type="math/tex">b-1</script>. Vì <script type="math/tex">a</script> và <script type="math/tex">b</script> nguyên tố cùng nhau nên các số <script type="math/tex">r</script>, <script type="math/tex">a+r</script>, <script type="math/tex">2a+r</script>, <script type="math/tex">\dots</script>, <script type="math/tex">(b-1)a+r</script> khi đem chia cho <script type="math/tex">b</script> lấy phần dư sẽ cho ra các kết quả đôi một khác nhau, tạo nên tập hợp <script type="math/tex">\{0,1,\dots,b-1\}</script>. Ta cần chọn ra các giá trị <script type="math/tex">m</script> nguyên tố cùng nhau với <script type="math/tex">b</script>. Trong trường hợp đó, kết quả <script type="math/tex">m \mod b</script> phải ra một số nguyên tố cùng nhau với <script type="math/tex">b</script> và khác 0. Có <script type="math/tex">\varphi(b)</script> giá trị <script type="math/tex">q</script> để tạo ra các giá trị <script type="math/tex">m</script> như thế.
+  <br /><br />Các số nguyên được chọn qua hai bước sẽ vừa nguyên tố cùng nhau với <script type="math/tex">a</script> và <script type="math/tex">b</script>, mặt khác <script type="math/tex">(a,b)=1</script>, nên chúng cũng nguyên tố cùng nhau với <script type="math/tex">ab</script>. Áp dụng quy tắc nhân thì có <script type="math/tex">\varphi(a)\varphi(b)</script> số. (QED)</li>
+    </ul>
+  </li>
+  <li>Định lý Euler: Với mọi số nguyên dương <script type="math/tex">n</script> nguyên tố cùng nhau với <script type="math/tex">a</script>, ta có:</li>
+</ul>
+
+<script type="math/tex; mode=display">a^{\varphi(n)}\equiv 1\pmod{n}</script>
+
+<p>Định lý nhỏ Fermat chỉ ra rằng nếu <script type="math/tex">p</script> là một số nguyên tố thì:</p>
+
+<script type="math/tex; mode=display">a^p \equiv a \pmod{p}\\
+    \Leftrightarrow (a^p - a)\ \vdots\ p</script>
+
+<p>Nếu <script type="math/tex">(a,p) = 1</script> thì ta có <script type="math/tex">(a^{p-1} - 1)\ \vdots\ p \Leftrightarrow a^{p-1} \equiv 1\pmod{p}</script>. Đây là một trường hợp nhỏ của định lý Euler với <script type="math/tex">n=p</script></p>
+
+          </article>
+          <div>
+            
+            
+              <a href="/category/#mathematics" class="btn btn-warning">#Mathematics</a>
+              &nbsp;
+            
+              <a href="/category/#lecture notes" class="btn btn-warning">#Lecture Notes</a>
+              
+            
+          </div>
+        
+        <hr>
+
+        <ul class="pagination justify-content-center" id="pagination">
+          
+            <li class="page-item"><a class="page-link" href="/A-brief/"><i class='fas fa-chevron-left' style='color: #FF8600;'></i> Previous</a></li>
+          
+
+          
+            <li class="page-item disabled"><span class="page-link" style="color: #999999;">Next <i class='fas fa-chevron-right'></i></span></li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-12">
+        <nav id="toc" data-toggle="toc" class="sticky-top" style="padding: 22px 0;"><p>Contents</p></nav>
+      </div>
+    </div>
+  
+</div>
+
+    <!-- Here is uncompressed JQuery, Popper and Bootstrap.js -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<div class="container" style="padding: 0 15px;">
+    <em>Last updated: April 19, 2020</em>
+</div>
+
+<footer class="page-footer">
+    <div class="footer-copyright text-center py-4">
+        <a href="http://localhost:4000">&copy; 2020 Trung Nghia Nguyen</a>
+    </div>
+</footer>
+
+<!-- Common js things -->
+
+
+
+
+
+
+
+    
+        <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+        
+	        <script src="/js/main.js"></script>
+        
+    
+        <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+        
+	        <script src="/js/backtotop.min.js"></script>
+        
+    
+        <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+        
+	        <script src="/js/bootstrap-toc.js"></script>
+        
+    
+        <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+        
+	        <script src="/js/modernizr.min.js"></script>
+        
+    
+
+
+
+    <script>
+        $(function() {
+       $('a[href*="#"]:not([href="#"])').click(function() {
+         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+           var target = $(this.hash);
+           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html, body').animate({
+               scrollTop: target.offset().top
+             }, 1000);
+             return false;
+           }
+         }
+       });
+     });
+    </script>
+
+    
+    <!-- Back-to-top configuration -->
+    <script>addBackToTop({
+      diameter: 46,
+      backgroundColor: 'rgb(60, 179, 113, .7)',
+      textColor: '#fff'
+    })
+    </script>
+
+    <!-- Katex Configuration -->
+    <script>
+      $("script[type='math/tex']").replaceWith(function() {
+          var tex = $(this).text();
+          return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: false});
+      });
+    </script>
+    <script>
+      $("script[type='math/tex; mode=display']").replaceWith(function() {
+        var tex = $(this).html();
+        // replace() here is due to CDATA wrapper (#224). KaTeX chokes on the % character,
+        // which is unfortunate (and should probably be reported).
+        return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+      });
+    </script>
+  </body>
+</html>

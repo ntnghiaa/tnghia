@@ -13,7 +13,7 @@
     .navbar-brand {
         margin: 0;
         font-family: Brandon;
-        font-size: 21px;
+        font-size: 30px;
         text-transform: uppercase;
         font-weight: 900;
         color: #ff584c;
@@ -113,7 +113,7 @@
                 text-transform: uppercase;
                 color: #ff584c;
                 &:focus, &:hover {
-                    color: $black;
+                    color: $red;
                 }
             }
         }
@@ -138,7 +138,7 @@
                     padding: 0 0 1px 0;
                     font-size: 14px;
                     &:focus, &:hover {
-                        border-bottom: 1.5px solid $black;
+                        border-bottom: 1.5px solid $red;
                         margin-bottom: -1px;
                     }
                 }
@@ -149,8 +149,8 @@
                 > a {
                     pointer-events: none !important;
                     cursor: default !important;
-                    color: $black !important;
-                    border-bottom: 1.5px solid $black !important;
+                    color: $red !important;
+                    border-bottom: 1.5px solid $red !important;
                     margin-bottom: -1px !important;
                 }
             }

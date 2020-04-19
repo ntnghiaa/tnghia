@@ -1,5 +1,5 @@
 # Site settings
-title: "Trung Nghia Nguyen"
+title: "T·Nghia"
 email:
 author:
   name: Trung Nghia Nguyen
@@ -13,6 +13,7 @@ sass:
 
 plugins:
   - jekyll-paginate
+  - jekyll-last-modified-at
 baseurl: ""
 
 # --- Background colour/image options --- #

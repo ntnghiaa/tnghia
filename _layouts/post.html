@@ -1,25 +1,23 @@
 ---
 layout: base
 progress-bar: true
-use-site-title: true
 ---
 
-  {% include header.html type="post" %}
-  <div class="container">
+{% include header.html type="post" %}
+<div class="container">
+  {% if page.toc %}
     <div class="row">
-      <div class="col-lg-8 col-md-12">
-        <div class="wrapper">
+      <div class="col-lg-9 col-md-12">
           <article role="main" class="blog-post">
             {{ content }}
           </article>
           <div>
             {% assign categories = page.categories %}
             {% for category in categories %}
-              <a href="{{ site.baseurl }}/category/#{{ category | downcase | slug_size }}" class="btn btn-warning">{{ category }}</a>
+              <a href="{{ site.baseurl }}/category/#{{ category | downcase | slug_size }}" class="btn btn-warning">#{{ category }}</a>
               {% unless forloop.last %}&nbsp;{% endunless %}
             {% endfor %}
           </div>
-        </div>
         
         <hr>
 
@@ -37,8 +35,13 @@ use-site-title: true
           {% endif %}
         </ul>
       </div>
-      <div class="col-lg-4 col-md-12">
-        <nav id="toc" data-toggle="toc" class="sticky-top" style="padding: 30px;"><p>Contents</p></nav>
+      <div class="col-lg-3 col-md-12">
+        <nav id="toc" data-toggle="toc" class="sticky-top" style="padding: 22px 0;"><p>Contents</p></nav>
       </div>
     </div>
-  </div>
+  {% else %}
+    <article role="main" class="blog-post">
+      {{ content }}
+    </article>
+  {% endif %}
+</div>

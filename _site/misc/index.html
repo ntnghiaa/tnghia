@@ -58,7 +58,7 @@
   <body data-spy="scroll" data-target="#toc">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="main-nav">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Trung Nghia Nguyen</a>
+    <a class="navbar-brand" href="/">T·Nghia</a>
     <button class="navbar-toggler hamburger-button" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <div class="animated-icon">
         <span></span>
@@ -101,13 +101,44 @@
 </header>
 
 <div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-md-12">
+  
+
+  
+  
+    </ul>
+      <h3 class="spanborder"><span> Stage 2020</span></h3>
+      <ul>
       
-    </div>
-    <div class="col-lg-4 col-md-12">
-    </div>
-  </div>
+  
+  <li>
+    <p style="color: red;">Apr 17 &nbsp;
+      <a href="/Euler-Gauss/">
+        Phi hàm Euler
+      </a>
+    </p>
+  </li>
+
+
+
+  
+  
+    </ul>
+      <h3 class="spanborder"><span> Stage 2019</span></h3>
+      <ul>
+      
+  
+  <li>
+    <p style="color: red;">Jul 17 &nbsp;
+      <a href="/A-brief/">
+        A brief overview about geom
+      </a>
+    </p>
+  </li>
+
+
+
+
+
 </div>
 
 
@@ -115,6 +146,10 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<div class="container" style="padding: 0 15px;">
+    <em>Last updated: April 19, 2020</em>
+</div>
 
 <footer class="page-footer">
     <div class="footer-copyright text-center py-4">
@@ -153,6 +188,23 @@
     
 
 
+
+    <script>
+        $(function() {
+       $('a[href*="#"]:not([href="#"])').click(function() {
+         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+           var target = $(this.hash);
+           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html, body').animate({
+               scrollTop: target.offset().top
+             }, 1000);
+             return false;
+           }
+         }
+       });
+     });
+    </script>
 
     
     <!-- Back-to-top configuration -->

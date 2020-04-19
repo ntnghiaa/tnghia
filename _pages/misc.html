@@ -1,17 +1,25 @@
 ---
-layout: base
+layout: page
 title: Miscellany
 permalink: /misc/
+smooth-scrolling: true
 ---
 
-{% include header.html type="page" %}
-
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-md-12">
-      
-    </div>
-    <div class="col-lg-4 col-md-12">
-    </div>
-  </div>
-</div>
+{% for post in site.posts %}
+{% if post.BorM == "M" %}
+  {% assign currentDate = post.date | date: "%Y" %}
+  {% if currentDate != myDate %}
+    </ul>
+      <h3 class="spanborder"><span> Stage {{ currentDate }}</span></h3>
+      <ul>
+      {% assign myDate = currentDate %}
+  {% endif %}
+  <li>
+    <p style="color: red;">{{ post.date | date: "%b %d" }} &nbsp;
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        {{ post.title }}
+      </a>
+    </p>
+  </li>
+{% endif %}
+{% endfor %}
