@@ -113,51 +113,51 @@
       <div class="col-lg-9 col-md-12">
           <article role="main" class="blog-post">
             <ul>
-  <li>Hàm phi (<script type="math/tex">\varphi</script>) Euler của một số nguyên dương <script type="math/tex">n</script> được định nghĩa là số các số nguyên dương <script type="math/tex">m</script> không vượt quá <script type="math/tex">n</script> sao cho <script type="math/tex">(m,n)=1</script>.
+  <li>Hàm phi (\(\varphi\)) Euler của một số nguyên dương \(n\) được định nghĩa là số các số nguyên dương \(m\) không vượt quá \(n\) sao cho \((m,n)=1\).
     <ul>
-      <li>Ví dụ, số 10 có 4 số nguyên dương không vượt quá 10 và nguyên tố cùng nhau với 10, đó là 1, 3, 7, 9. Như vậy, <script type="math/tex">\varphi(10)=4</script>.</li>
+      <li>Ví dụ, số 10 có 4 số nguyên dương không vượt quá 10 và nguyên tố cùng nhau với 10, đó là 1, 3, 7, 9. Như vậy, \(\varphi(10)=4\).</li>
     </ul>
   </li>
-  <li>Nếu <script type="math/tex">n=p</script> là số nguyên tố, dễ thấy <script type="math/tex">\varphi(p)=p-1</script>.</li>
-  <li>Nếu <script type="math/tex">n=p^k</script> thì <script type="math/tex">\varphi(p^k)=p^k-p^{k-1}</script>.
+  <li>Nếu \(n=p\) là số nguyên tố, dễ thấy \(\varphi(p)=p-1\).</li>
+  <li>Nếu \(n=p^k\) thì \(\varphi(p^k)=p^k-p^{k-1}\).
     <ul>
-      <li><strong>Chứng minh:</strong> Có tổng cộng <script type="math/tex">p^k</script> số nguyên dương cần xét. Trong số đó, các số <script type="math/tex">m</script> có ước chung lớn nhất với <script type="math/tex">n</script> khác 1 sẽ có dạng <script type="math/tex">m=px</script>, với <script type="math/tex">x</script> là bất cứ số nguyên dương nào đảm bảo <script type="math/tex">px\leq p^k</script>, như vậy có tổng cộng <script type="math/tex">p^{k-1}</script> giá trị <script type="math/tex">x</script> như thế. Suy ra số các số nguyên tố cùng nhau với <script type="math/tex">n</script> là <script type="math/tex">p^k-p^{k-1}</script>. (QED)</li>
+      <li><strong>Chứng minh:</strong> Có tổng cộng \(p^k\) số nguyên dương cần xét. Trong số đó, các số \(m\) có ước chung lớn nhất với \(n\) khác 1 sẽ có dạng \(m=px\), với \(x\) là bất cứ số nguyên dương nào đảm bảo \(px\leq p^k\), như vậy có tổng cộng \(p^{k-1}\) giá trị \(x\) như thế. Suy ra số các số nguyên tố cùng nhau với \(n\) là \(p^k-p^{k-1}\). (QED)</li>
     </ul>
   </li>
-  <li>Nếu <script type="math/tex">n=p_1p_2</script> (với <script type="math/tex">p_1 \neq p_2</script>) thì <script type="math/tex">\varphi(p_1p_2) = \varphi(p_1)\times\varphi(p_2)</script>.
+  <li>Nếu \(n=p_1p_2\) (với \(p_1 \neq p_2\)) thì \(\varphi(p_1p_2) = \varphi(p_1)\times\varphi(p_2)\).
     <ul>
-      <li><strong>Chứng minh:</strong> Có tổng cộng <script type="math/tex">p_1p_2</script> số nguyên dương cần xét. Trong số đó, các số <script type="math/tex">m</script> có ước chung lớn nhất với <script type="math/tex">n</script> khác 1 sẽ có dạng <script type="math/tex">m=p_1x</script> hoặc <script type="math/tex">m=p_2x</script> sao cho <script type="math/tex">m\leq n</script>. Trong trường hợp đầu, <script type="math/tex">x</script> trải dài từ <script type="math/tex">1</script> đến <script type="math/tex">p_2</script>. Trong trường hợp sau, <script type="math/tex">x</script> trải dài từ <script type="math/tex">1</script> đến <script type="math/tex">p_1</script>. Tuy nhiên, có hai giá trị <script type="math/tex">m</script> được đếm hai lần, đó là <script type="math/tex">p_1p_2</script>. Như vậy có tổng cộng <script type="math/tex">p_1+p_2-1</script> số không nguyên tố cùng nhau với <script type="math/tex">n</script>. Như vậy:</li>
+      <li><strong>Chứng minh:</strong> Có tổng cộng \(p_1p_2\) số nguyên dương cần xét. Trong số đó, các số \(m\) có ước chung lớn nhất với \(n\) khác 1 sẽ có dạng \(m=p_1x\) hoặc \(m=p_2x\) sao cho \(m\leq n\). Trong trường hợp đầu, \(x\) trải dài từ \(1\) đến \(p_2\). Trong trường hợp sau, \(x\) trải dài từ \(1\) đến \(p_1\). Tuy nhiên, có hai giá trị \(m\) được đếm hai lần, đó là \(p_1p_2\). Như vậy có tổng cộng \(p_1+p_2-1\) số không nguyên tố cùng nhau với \(n\). Như vậy:</li>
     </ul>
   </li>
 </ul>
 
-<script type="math/tex; mode=display">\varphi(n)=p_1p_2-(p_1+p_2-1)\\
+\[\varphi(n)=p_1p_2-(p_1+p_2-1)\\
     =p_1p_2 - p_1 - p_2 + 1\\
     =p_1(p_2-1)-(p_2-1)\\
     =(p_1-1)(p_2-1)\\
-    =\varphi(p_1)\times\varphi(p_2)</script>
+    =\varphi(p_1)\times\varphi(p_2)\]
 
 <ul>
-  <li>Nếu <script type="math/tex">n=ab</script> (với <script type="math/tex">a,b</script> nguyên tố cùng nhau) thì <script type="math/tex">\varphi(ab)=\varphi(a)\times\varphi(b)</script> (trường hợp tổng quát hơn của định lý trước).
+  <li>Nếu \(n=ab\) (với \(a,b\) nguyên tố cùng nhau) thì \(\varphi(ab)=\varphi(a)\times\varphi(b)\) (trường hợp tổng quát hơn của định lý trước).
     <ul>
-      <li><strong>Chứng minh</strong>: Tất cả các số nguyên dương <script type="math/tex">m</script> không vượt quá <script type="math/tex">n=ab</script> có dạng <script type="math/tex">m=aq+r</script> với <script type="math/tex">q,r</script> là các số nguyên lần lượt nằm trong khoảng <script type="math/tex">[0,b-1]</script> và <script type="math/tex">[1,a]</script>.
-  Công việc cần làm là đếm xem có bao nhiêu cặp giá trị <script type="math/tex">(q,r)</script> thỏa bài toán.
-  <br /><br /><em><strong>Bước 1:</strong></em> Chọn <script type="math/tex">r</script>. Nhận thấy rằng <script type="math/tex">d=(r,a)\neq 1</script>, nếu không, <script type="math/tex">m\vdots d</script> và <script type="math/tex">n\vdots d</script> suy ra <script type="math/tex">(m,n)\neq 1</script>. Xét việc chọn các giá trị <script type="math/tex">r</script> thỏa mãn <script type="math/tex">(r,a)=1</script>, có tổng cộng <script type="math/tex">\varphi(a)</script> giá trị <script type="math/tex">r</script> như thế.
-  <br /><br /><em><strong>Bước 2:</strong></em> Chọn <script type="math/tex">q</script>. Với mỗi giá trị <script type="math/tex">r</script> đã chọn, có tổng cộng <script type="math/tex">b</script> số <script type="math/tex">m=aq+r</script> cần phải xét, với <script type="math/tex">q</script> chạy từ <script type="math/tex">0</script> đến <script type="math/tex">b-1</script>. Vì <script type="math/tex">a</script> và <script type="math/tex">b</script> nguyên tố cùng nhau nên các số <script type="math/tex">r</script>, <script type="math/tex">a+r</script>, <script type="math/tex">2a+r</script>, <script type="math/tex">\dots</script>, <script type="math/tex">(b-1)a+r</script> khi đem chia cho <script type="math/tex">b</script> lấy phần dư sẽ cho ra các kết quả đôi một khác nhau, tạo nên tập hợp <script type="math/tex">\{0,1,\dots,b-1\}</script>. Ta cần chọn ra các giá trị <script type="math/tex">m</script> nguyên tố cùng nhau với <script type="math/tex">b</script>. Trong trường hợp đó, kết quả <script type="math/tex">m \mod b</script> phải ra một số nguyên tố cùng nhau với <script type="math/tex">b</script> và khác 0. Có <script type="math/tex">\varphi(b)</script> giá trị <script type="math/tex">q</script> để tạo ra các giá trị <script type="math/tex">m</script> như thế.
-  <br /><br />Các số nguyên được chọn qua hai bước sẽ vừa nguyên tố cùng nhau với <script type="math/tex">a</script> và <script type="math/tex">b</script>, mặt khác <script type="math/tex">(a,b)=1</script>, nên chúng cũng nguyên tố cùng nhau với <script type="math/tex">ab</script>. Áp dụng quy tắc nhân thì có <script type="math/tex">\varphi(a)\varphi(b)</script> số. (QED)</li>
+      <li><strong>Chứng minh</strong>: Tất cả các số nguyên dương \(m\) không vượt quá \(n=ab\) có dạng \(m=aq+r\) với \(q,r\) là các số nguyên lần lượt nằm trong khoảng \([0,b-1]\) và \([1,a]\).
+  Công việc cần làm là đếm xem có bao nhiêu cặp giá trị \((q,r)\) thỏa bài toán.
+  <br /><br /><em><strong>Bước 1:</strong></em> Chọn \(r\). Nhận thấy rằng \(d=(r,a)\neq 1\), nếu không, \(m\vdots d\) và \(n\vdots d\) suy ra \((m,n)\neq 1\). Xét việc chọn các giá trị \(r\) thỏa mãn \((r,a)=1\), có tổng cộng \(\varphi(a)\) giá trị \(r\) như thế.
+  <br /><br /><em><strong>Bước 2:</strong></em> Chọn \(q\). Với mỗi giá trị \(r\) đã chọn, có tổng cộng \(b\) số \(m=aq+r\) cần phải xét, với \(q\) chạy từ \(0\) đến \(b-1\). Vì \(a\) và \(b\) nguyên tố cùng nhau nên các số \(r\), \(a+r\), \(2a+r\), \(\dots\), \((b-1)a+r\) khi đem chia cho \(b\) lấy phần dư sẽ cho ra các kết quả đôi một khác nhau, tạo nên tập hợp \(\{0,1,\dots,b-1\}\). Ta cần chọn ra các giá trị \(m\) nguyên tố cùng nhau với \(b\). Trong trường hợp đó, kết quả \(m \mod b\) phải ra một số nguyên tố cùng nhau với \(b\) và khác 0. Có \(\varphi(b)\) giá trị \(q\) để tạo ra các giá trị \(m\) như thế.
+  <br /><br />Các số nguyên được chọn qua hai bước sẽ vừa nguyên tố cùng nhau với \(a\) và \(b\), mặt khác \((a,b)=1\), nên chúng cũng nguyên tố cùng nhau với \(ab\). Áp dụng quy tắc nhân thì có \(\varphi(a)\varphi(b)\) số. (QED)</li>
     </ul>
   </li>
-  <li>Định lý Euler: Với mọi số nguyên dương <script type="math/tex">n</script> nguyên tố cùng nhau với <script type="math/tex">a</script>, ta có:</li>
+  <li>Định lý Euler: Với mọi số nguyên dương \(n\) nguyên tố cùng nhau với \(a\), ta có:</li>
 </ul>
 
-<script type="math/tex; mode=display">a^{\varphi(n)}\equiv 1\pmod{n}</script>
+\[a^{\varphi(n)}\equiv 1\pmod{n}\]
 
-<p>Định lý nhỏ Fermat chỉ ra rằng nếu <script type="math/tex">p</script> là một số nguyên tố thì:</p>
+<p>Định lý nhỏ Fermat chỉ ra rằng nếu \(p\) là một số nguyên tố thì:</p>
 
-<script type="math/tex; mode=display">a^p \equiv a \pmod{p}\\
-    \Leftrightarrow (a^p - a)\ \vdots\ p</script>
+\[a^p \equiv a \pmod{p}\\
+    \Leftrightarrow (a^p - a)\ \vdots\ p\]
 
-<p>Nếu <script type="math/tex">(a,p) = 1</script> thì ta có <script type="math/tex">(a^{p-1} - 1)\ \vdots\ p \Leftrightarrow a^{p-1} \equiv 1\pmod{p}</script>. Đây là một trường hợp nhỏ của định lý Euler với <script type="math/tex">n=p</script></p>
+<p>Nếu \((a,p) = 1\) thì ta có \((a^{p-1} - 1)\ \vdots\ p \Leftrightarrow a^{p-1} \equiv 1\pmod{p}\). Đây là một trường hợp nhỏ của định lý Euler với \(n=p\)</p>
 
           </article>
           <div>
@@ -201,7 +201,7 @@
 
 <footer class="page-footer">
     <div class="footer-copyright text-center py-4">
-        <a href="http://localhost:4000">&copy; 2020 Trung Nghia Nguyen</a>
+        <a href="http://localhost:4000">&copy; 2021 Trung Nghia Nguyen</a>
     </div>
 </footer>
 
